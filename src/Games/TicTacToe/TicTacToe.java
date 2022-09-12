@@ -39,7 +39,7 @@ public class TicTacToe {
             while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPositions)){
                 cpuPos = console.nextInt();
             }
-            placePiece(gameBoard, cpuPos, "cpu" );
+            placePiece(gameBoard, cpuPos, "AI" );
 
             printGameBoard(gameBoard);
 
@@ -68,40 +68,22 @@ public class TicTacToe {
         if (user.equals("player")){
             symbol = 'X';
             playerPositions.add(pos);
-        } else if(user.equals("cpu")){
+        } else if(user.equals("AI")){
             symbol = 'O';
             cpuPositions.add(pos);
         }
-        switch(pos){
-            case 1:
-                gameBoard[0][0] = symbol;
-                break;
-            case 2:
-                gameBoard[0][2] = symbol;
-                break;
-            case 3:
-                gameBoard[0][4] = symbol;
-                break;
-            case 4:
-                gameBoard[2][0] = symbol;
-                break;
-            case 5:
-                gameBoard[2][2] = symbol;
-                break;
-            case 6:
-                gameBoard[2][4] = symbol;
-                break;
-            case 7:
-                gameBoard[4][0] = symbol;
-                break;
-            case 8:
-                gameBoard[4][2] = symbol;
-                break;
-            case 9:
-                gameBoard[4][4] = symbol;
-                break;
-            default:
-                break;
+        switch (pos) {
+            case 1 -> gameBoard[0][0] = symbol;
+            case 2 -> gameBoard[0][2] = symbol;
+            case 3 -> gameBoard[0][4] = symbol;
+            case 4 -> gameBoard[2][0] = symbol;
+            case 5 -> gameBoard[2][2] = symbol;
+            case 6 -> gameBoard[2][4] = symbol;
+            case 7 -> gameBoard[4][0] = symbol;
+            case 8 -> gameBoard[4][2] = symbol;
+            case 9 -> gameBoard[4][4] = symbol;
+            default -> {
+            }
         }
 
     }
@@ -134,7 +116,7 @@ public class TicTacToe {
             if(playerPositions.containsAll(l)){
                 return "Congratulations you won!";
             }else if(cpuPositions.contains(l)) {
-                return "CPU wins! Sorry :( ";
+                return "AI wins! Sorry :( ";
             }else if(playerPositions.size() + cpuPositions.size() == 9) {
                 return "CAT!";
             }
