@@ -9,7 +9,8 @@ public class GUI implements ActionListener {
     private static JPasswordField passwordText;
     private static JLabel success;
 
-    public static void main(String[] args) {
+
+    public GUI(){
         JFrame frame = new JFrame(); // выплывающее окно
         JPanel panel = new JPanel(); // пространство внтури окна
         frame.setSize(270,150);
@@ -27,14 +28,14 @@ public class GUI implements ActionListener {
         panel.add(userLabel);
 
         /*
-            Инпут для ввода текста
+            "User" инпут для ввода текста
          */
         userText = new JTextField(20 );
         userText.setBounds(100, 20, 165, 25 );
         panel.add(userText);
 
         /*
-            Лэйбл для  блока "Password"
+            Лэйбл для блока "Password"
          */
         JLabel passwordLabel = new JLabel("Password");
         passwordLabel.setBounds(10, 50, 80, 25);
@@ -55,6 +56,12 @@ public class GUI implements ActionListener {
 
         frame.setVisible(true);
 
+
+
+    }
+
+    public static void main(String[] args) {
+        new GUI();
     }
 
     @Override
