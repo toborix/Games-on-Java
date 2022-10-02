@@ -1,7 +1,10 @@
-package Games.TicTacToe;
+package Games.TicTacToe.TicTacToe2;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class TicTacToe {
@@ -17,7 +20,7 @@ public class TicTacToe {
         }
     }
 
-    public static void placePiece(char[][] gameBoard, int pos, String user) {
+    public static void placePiece(char[][] gameBoard, int pos, @NotNull String user) {
 
         char symbol = ' ';
 
@@ -70,9 +73,9 @@ public class TicTacToe {
 
         String result = "";
         for (List<Integer> l : winningConditions) {
-            if (playerPositions.containsAll(l)) {
+            if (new HashSet<>(playerPositions).containsAll(l)) {
                 result = "Congratulations you won!";
-            } else if (cpuPositions.containsAll(l)) {
+            } else if (new HashSet<>(cpuPositions).containsAll(l)) {
                 result = "AI wins! Sorry :( ";
             } else if (playerPositions.size() + cpuPositions.size() == 9) {
                 result = "Draw!";

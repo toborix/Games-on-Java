@@ -1,4 +1,4 @@
-package Games.TicTacToe;
+package Games.TicTacToe.TicTacToe2;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -17,6 +17,9 @@ public class StartGame {
                 { ' ', '|', ' ', '|', ' ' },
                 { '-', '+', '-', '+', '-' },
                 { ' ', '|', ' ', '|', ' ' } };
+
+
+
 
         TicTacToe.printGameBoard(gameBoard);
         Scanner console = new Scanner(System.in);
